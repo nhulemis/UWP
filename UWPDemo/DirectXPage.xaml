@@ -1,0 +1,93 @@
+﻿<Page
+    x:Class="UWPDemo.DirectXPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWPDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <SwapChainPanel x:Name="swapChainPanel" >
+        <Rectangle Name="recTarget"
+                   Margin="0,400,0,10"
+                   Fill="WhiteSmoke" 
+                   PointerEntered="Rectangle_PointerEntered"
+                   PointerPressed="Rectangle_PointerPressed"
+                   PointerReleased="Rectangle_PointerReleased"
+                   PointerWheelChanged="Rectangle_PointerWheelChanged"
+                   PointerMoved="Rectangle_PointerMoved"
+                   />
+        <TextBlock Text="Hello from XAML!"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Top"
+                   FontSize="30" Margin="0,71,76,0"
+                   Name="txtResult"/>
+        <TextBox HorizontalAlignment="Left"
+                 Margin="47,34,0,0" 
+                 VerticalAlignment="Top" 
+                 Height="42" Width="176"
+                 Name="txtNumberOne"
+                 KeyDown="TxtNumberOne_KeyDown"
+                 />
+        <TextBox HorizontalAlignment="Left"
+                 Margin="47,103,0,0" 
+                 VerticalAlignment="Top" 
+                 Height="42" Width="176"
+                 Name="txtNumberTwo"
+                 KeyDown="TxtNumberTwo_KeyDown"
+                 />
+        <ComboBox HorizontalAlignment="Left" 
+                  Margin="47,171,0,0" 
+                  VerticalAlignment="Top" 
+                  Height="42" Width="176"
+                  Name="cboCalculation"
+                  DisplayMemberPath="m_display"
+                  SelectedValuePath="m_value"
+                  SelectionChanged="CboCalculation_SelectionChanged"
+                  />
+        <Button Content="result" 
+                FontSize="20"
+                HorizontalAlignment="Left"
+                Margin="47,237,0,0" 
+                VerticalAlignment="Top" 
+                Height="42" Width="176"
+                Name="btnResult"
+                Tapped="BtnResult_Tapped"/>
+        <Button Content="Show title notification" 
+                Name="btnShowNotification"
+                HorizontalAlignment="Left" 
+                Margin="187,468,0,0" 
+                VerticalAlignment="Top" 
+                RenderTransformOrigin="-2.446,4.125" 
+                Height="71" Width="419"
+                Tapped="Button_Tapped"/>
+        <Button Content="Button"
+                Name="btnCreateFile"
+                HorizontalAlignment="Left"
+                Margin="187,585,0,0" 
+                VerticalAlignment="Top" 
+                RenderTransformOrigin="-0.508,-0.938" 
+                Height="50" Width="419"
+                Tapped="BtnCreateFile_Tapped"/>
+        <TextBlock HorizontalAlignment="Center"
+                   Name="txtPathInstalled"
+                   Margin="0,124,0,0" 
+                   Text="TextBlock" 
+                   TextWrapping="Wrap" 
+                   VerticalAlignment="Top" 
+                   Height="21" Width="452"/>
+
+
+    </SwapChainPanel>
+
+    <Page.BottomAppBar>
+        <AppBar x:Name="bottomAppBar" Padding="10,0,10,0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <AppBarButton AutomationProperties.Name="Sample Button"
+                      AutomationProperties.AutomationId="SampleAppBarButton"
+                      Click="AppBarButton_Click"/>
+            </StackPanel>
+        </AppBar>
+    </Page.BottomAppBar>
+</Page>
